@@ -1,0 +1,61 @@
+header {
+    background-color: rgba(0, 0, 0, 1);
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            font-size: 1rem;
+            padding: 1rem;
+
+            a {
+                color: #fff;
+
+                &:hover {
+                    color: #F6571E;
+                }
+
+                &.active {
+                    color: rgb(96, 214, 0);
+                    &:hover {
+                        color: rgb(96, 214, 0);
+                    }
+                }
+
+            }
+
+            .btn-profile {
+                display: flex;
+                align-items: center;
+                gap: .85rem;
+                color: #fff;
+                cursor: pointer;
+
+                .user-img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
