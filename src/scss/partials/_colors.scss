@@ -1,0 +1,28 @@
+.text-orange {
+    color: #F6571E;
+}
+
+.text-green {
+    color: #60D600;
+}
+
+.bg-orange {
+    background-color: #F6571E;
+}
+
+.bg-green {
+    background-color: #60D600;
+}
+
+.bg-gradient-green {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    transform: rotate(90deg);
+    top: 0;
+    right: 0;
+    border-radius: 150px;
+    background: rgb(96, 214, 0);
+    filter: blur(355.5px);
+    z-index: -1;
+}

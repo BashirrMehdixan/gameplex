@@ -1,7 +1,9 @@
+import HomeBanner from "/src/pages/home/HomeBanner";
+
 const Home = () => {
     return (
         <>
-            <div>Home page</div>
+            <HomeBanner/>
         </>
     )
 }

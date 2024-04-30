@@ -10,10 +10,10 @@ const Navbar = () => {
                 <nav>
                     <div className="container">
                         <div className="navbar">
-                            <a className={"logo"}>
+                            <NavLink to={"/"} className={"logo"}>
                                 <img src="/images/favicon.png" alt="Favicon"/>
                                 <img src="/images/logo.png" alt="Gameplex Logo"/>
-                            </a>
+                            </NavLink>
                             <ul className="nav-menu">
                                 <li>
                                     <NavLink to={"/"}>
@@ -26,7 +26,7 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={"/game"}>
+                                    <NavLink to={"/games"}>
                                         Game
                                     </NavLink>
                                 </li>

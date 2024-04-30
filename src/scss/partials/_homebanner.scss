@@ -1,0 +1,103 @@
+.home-banner {
+    position: relative;
+    padding: 8rem 0 5rem 0;
+    overflow: hidden;
+
+    .banner-body {
+        display: flex;
+
+        .left-item {
+            width: 41%;
+
+            .web-info {
+                display: flex;
+
+                li {
+                    position: relative;
+                    font-family: "Chakra Petch", sans-serif;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    padding: .85rem 1rem;
+
+                    &:not(:first-child)::before {
+                        position: absolute;
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        background-color: #F6571E;
+                        border-radius: 50%;
+                        top: 25px;
+                        left: -3px;
+                    }
+                }
+
+            }
+
+            .banner-head {
+                margin-bottom: 1.5rem;
+            }
+
+            .btn-play {
+                padding: .8rem 2rem;
+                border-radius: 2rem;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: calc(100% + .5rem);
+                    height: calc(100% + .5rem);
+                    border: 2px solid;
+                    border-color: transparent #F6571E;
+                    border-radius: inherit;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-4%, -10%);
+                }
+
+                &:hover::after {
+                    border-color: #F6571E;
+                }
+            }
+        }
+
+        .middle-item {
+            position: relative;
+            width: 25%;
+
+            .middle-bg {
+                position: absolute;
+                width: 520px;
+                height: 950px;
+                top: 0;
+                left: 0;
+                transform: translate(-30%, -35%);
+                z-index: -1;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .middle-hero {
+                position: absolute;
+                width: 500px;
+                height: 700px;
+                top: 0;
+                left: 0;
+                transform: translate(-15%, -15%);
+
+                img {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .right-item {
+            width: 34%;
+            .winner-list {
+                background-color: rgb(255, 255, 255, .1);
+            }
+        }
+    }
+}
