@@ -1,6 +1,6 @@
 .home-banner {
     position: relative;
-    padding: 8rem 0 5rem 0;
+    padding: 8rem 0 10rem 0;
     overflow: hidden;
 
     .banner-body {
@@ -71,7 +71,7 @@
                 top: 0;
                 left: 0;
                 transform: translate(-30%, -35%);
-                z-index: -1;
+                z-index: -2;
 
                 img {
                     width: 100%;
@@ -85,6 +85,7 @@
                 top: 0;
                 left: 0;
                 transform: translate(-15%, -15%);
+                z-index: -1;
 
                 img {
                     width: 100%;
@@ -95,8 +96,52 @@
 
         .right-item {
             width: 34%;
+
             .winner-list {
+                position: relative;
                 background-color: rgb(255, 255, 255, .1);
+                padding: .85rem 1.25rem;
+                border-radius: 1rem;
+                z-index: 1;
+
+                li {
+                    position: relative;
+                    padding: 1rem 1.25rem;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid rgba(255, 255, 255, .3);
+                    }
+
+                    &:first-child {
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: .85rem;
+                            height: .85rem;
+                            background-color: #F6571E;
+                            border-radius: 50%;
+                            top: 40%;
+                            left: -1%;
+                        }
+                    }
+
+                    .winner-info {
+                        display: flex;
+                        align-items: center;
+
+                        .img {
+                            width: 4.5rem;
+                            height: 4.5rem;
+                            border-radius: 50%;
+                            margin-right: 1.25rem;
+
+                            img {
+                                width: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

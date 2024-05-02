@@ -1,0 +1,156 @@
+
+.banner-carousel {
+    position: relative;
+    margin: -100px 0;
+
+    .owl-nav {
+        button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border: 1px dotted #F6571E !important;
+            border-radius: 50% !important;
+            background: transparent !important;
+            z-index: 0;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background-color: #F6571E;
+                border-radius: 50%;
+                top: 0;
+                left: 0;
+                transition: .5s linear;
+                transform-origin: top;
+                transform: scale(0);
+            }
+
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+
+        span {
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .owl-stage-outer {
+        padding: 45px 0;
+
+        .owl-item {
+            position: relative;
+            margin: 0 !important;
+            transition: .5s linear;
+            transform: rotateX(0deg) rotateY(11deg) scale(1);
+
+            &.active.center {
+                z-index: 2;
+                transform: scale(1.1);
+                .banner-card-sm {
+                    border: 1px solid #F6571E;
+                }
+            }
+        }
+
+    }
+}
+
+.banner-card-sm {
+    border: 1px solid rgb(36, 40, 41);
+    padding: 1rem;
+    border-radius: .8rem;
+    background-color: rgb(23, 25, 28);
+    box-shadow: 10px 15px 10px -3px #222;
+    transition: .5s linear;
+
+    .card-img {
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: .8rem;
+        }
+
+        .game-date {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            font-size: .9rem;
+            background-color: rgba(255, 255, 255, .3);
+            padding: .4rem;
+            border-radius: 1rem;
+            top: .3rem;
+            right: 0.3rem;
+
+            svg {
+                font-size: 1rem;
+            }
+
+            span {
+                margin-left: .2rem;
+            }
+        }
+
+        .play-status {
+            position: absolute;
+            background-color: #222;
+            border: 2px solid #60D600;
+            border-radius: 1rem;
+            padding: .5rem 1.5rem;
+            bottom: -10px;
+            left: 6px;
+        }
+    }
+
+    .card-body {
+        text-align: center;
+        padding: 1rem 0 8px 0;
+
+        .small-title {
+            font-size: 1.25rem;
+        }
+
+        .game-price {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(36, 40, 41, .4);
+            border-radius: 16px;
+            padding: 5px;
+            margin: 10px auto 0 auto;
+
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                padding: 0 8px;
+
+                &:first-child::after {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, .3);
+                    right: -5px;
+                }
+            }
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin: 0 5px;
+            }
+        }
+    }
+}

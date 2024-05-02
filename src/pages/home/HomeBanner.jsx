@@ -36,6 +36,45 @@ const HomeBanner = () => {
                                             last winner
                                         </h3>
                                     </li>
+                                    <li>
+                                        <div className="winner-info">
+                                            <div className="img">
+                                                <img src="/images/avatars/avatar1.png" alt="Avatar 1"/>
+                                            </div>
+                                            <div className="winner-body">
+                                                <h5 className="small-title">
+                                                    Cristofer Dorwart
+                                                </h5>
+                                                <p className="price text-green">+$350</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="winner-info">
+                                            <div className="img">
+                                                <img src="/images/avatars/avatar2.png" alt="Avatar 2"/>
+                                            </div>
+                                            <div className="winner-body">
+                                                <h5 className="small-title">
+                                                    Luna Evergreen
+                                                </h5>
+                                                <p className="price text-green">+$250</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="winner-info">
+                                            <div className="img">
+                                                <img src="/images/avatars/avatar3.png" alt="Avatar 3"/>
+                                            </div>
+                                            <div className="winner-body">
+                                                <h5 className="small-title">
+                                                    Lucas Thornfield
+                                                </h5>
+                                                <p className="price text-green">+$150</p>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
