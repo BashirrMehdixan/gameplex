@@ -7,8 +7,8 @@ import {gamesContext} from "/src/context/GamesContext";
 
 const BannerSlide = () => {
     const {games} = useContext(gamesContext);
-    console.log(games)
     return (
+        games &&
         <>
             <div className="banner-carousel">
                 <div className="container">
@@ -28,27 +28,7 @@ const BannerSlide = () => {
                         nav
                         dots={false}
                     >
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
-                        <div className='item'>
-                            <BannerCard/>
-                        </div>
+                        {games.map((game, index) => <div className={"item"} key={index}><BannerCard {...game}/></div>)}
                     </OwlCarousel>
                 </div>
             </div>

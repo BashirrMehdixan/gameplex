@@ -15,6 +15,7 @@
 @import url(./partials/_colors.scss);
 @import url(./partials/_headers.scss);
 @import url(./partials/_banner-cards.scss);
+@import url(./partials/_top-player.scss);
 // Layouts
 @import url(./partials/_navbar.scss);
 //@import url(./partials/_footer.scss);
@@ -32,7 +33,9 @@ a {
     font-weight: inherit;
     transition: .3s linear;
 }
-
+svg {
+    color: inherit;
+}
 .container {
     width: 90%;
     padding: 0 1rem;
@@ -41,6 +44,51 @@ a {
 
 .block {
     display: block;
+}
+
+.ratings{
+    display: flex;
+
+}
+// Owl carousel
+.owl-nav {
+    button {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border: 1px dotted #F6571E !important;
+        border-radius: 50% !important;
+        background: transparent !important;
+        z-index: 0;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: #F6571E;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            transition: .3s linear;
+            transform-origin: top;
+            transform: scale(0);
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+    }
+
+    span {
+        width: 100%;
+        height: 100%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 

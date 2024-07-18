@@ -1,0 +1,56 @@
+.top-player-card {
+    background-color: rgb(13, 15, 18);
+    padding: 10px;
+    border-radius: 10px;
+
+    .top-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .user-info {
+            display: flex;
+
+            .user-img {
+                position: relative;
+                width: 55px;
+                height: 55px;
+                margin-right: 10px;
+
+                .count-badge {
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 14px;
+                    background-color: #F6571E;
+                    border-radius: 50%;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .user-position {
+                font-size: 14px;
+                color: rgba(181, 181, 181);
+            }
+        }
+    }
+
+    .bottom-card {
+        display: flex;;
+
+        .ratings {
+            li {
+                color: rgb(255, 175, 65);
+            }
+        }
+    }
+}
