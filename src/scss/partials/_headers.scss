@@ -4,6 +4,13 @@
     text-transform: uppercase;
 }
 
+.extra-small-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(181, 181, 181);
+    padding: 10px 0;
+}
+
 .small-title {
     font-family: "Chakra Petch", sans-serif;
     font-size: 1.5rem;
@@ -13,5 +20,11 @@
 .medium-title {
     font-family: "Chakra Petch", sans-serif;
     font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.large-title {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 3.5rem;
     text-transform: capitalize;
 }
