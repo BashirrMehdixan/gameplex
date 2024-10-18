@@ -1,35 +1,37 @@
-import {useContext} from "react";
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import {useContext, useEffect, useState} from "react";
 import {BannerCard} from "/src/components/Cards";
 import {gamesContext} from "/src/context/GamesContext";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay} from "swiper/modules"
 
 const BannerSlide = () => {
-    const {games} = useContext(gamesContext);
+    const {getData} = useContext(gamesContext);
+    const [games, setGames] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const gamesData = await getData('games');
+            setGames(gamesData);
+        };
+        fetchData()
+    }, []);
     return (
         games &&
         <>
             <div className="banner-carousel">
-                <div className="container">
-                    <OwlCarousel
-                        className='owl-theme'
-                        items={4}
-                        autoplay={true}
-                        margin={10}
-                        startPosition={3}
-                        autoplaySpeed={500}
-                        loop
-                        center={true}
-                        navText={[
-                            '<span class="arrow prev">‹</span>',
-                            '<span class="arrow next">›</span>'
-                        ]}
-                        nav
-                        dots={false}
+                <div className="container glide">
+                    <Swiper
+                        loop={true}
+                        slidesPerView={5}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        modules={[Autoplay]}
+                        className={`bannerSlide centered-slide`}
                     >
-                        {games.map((game, index) => <div className={"item"} key={index}><BannerCard {...game}/></div>)}
-                    </OwlCarousel>
+                        {games.map(game => <SwiperSlide key={game.id}><BannerCard item={game}/></SwiperSlide>)}
+                    </Swiper>
                 </div>
             </div>
         </>

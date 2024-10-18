@@ -1,16 +1,15 @@
-import {CiCalendarDate, CiStar} from "react-icons/ci";
-import {BsPersonAdd} from "react-icons/bs";
-import {RiVipDiamondLine} from "react-icons/ri";
-import {FaStar} from "react-icons/fa";
+import {Link} from "react-router-dom";
+import Icon from "@mdi/react";
+import {mdiCalendarBlankOutline, mdiDiamondOutline, mdiHandshakeOutline, mdiStar, mdiStarHalfFull, mdiStarOutline} from "@mdi/js";
 
-export const BannerCard = ({id, name, background_image, playing, slug}) => {
+export const BannerCard = ({item}) => {
     return (
         <>
-            <div className="banner-card-sm">
+            <div className="banner-card-sm card">
                 <div className="card-img">
-                    <img src={background_image} alt="Clash 01"/>
+                    <img src={item.background_image} alt=''/>
                     <p className="game-date">
-                        <CiCalendarDate/>
+                        <Icon path={mdiCalendarBlankOutline} size={1}/>
                         <span>15.05.2024</span>
                     </p>
                     <div className="play-status">
@@ -19,15 +18,17 @@ export const BannerCard = ({id, name, background_image, playing, slug}) => {
                 </div>
                 <div className="card-body">
                     <h5 className="small-title">
-                        {name}
+                        <Link to={`games/${item.slug}`}>
+                            {item.name}
+                        </Link>
                     </h5>
                     <ul className="game-price">
                         <li>
-                            <img src="/images/icons/bitcoin.png" alt=""/>
+                            <img src={"/images/icons/bitcoin.png"} alt=""/>
                             <span>75</span>
                         </li>
                         <li>
-                            <img src="/images/icons/tether.png" alt=""/>
+                            <img src={"/images/icons/tether.png"} alt=""/>
                             <span>$49.97</span>
                         </li>
                     </ul>
@@ -37,25 +38,27 @@ export const BannerCard = ({id, name, background_image, playing, slug}) => {
     )
 }
 
-export const PlayerCard = () => {
+export const PlayerCard = ({item}) => {
     return (
         <>
-            <div className="top-player-card">
+            <div className="top-player-card card">
                 <div className="top-card">
                     <div className="user-info">
                         <div className="user-img">
-                            <img src="/images/avatars/avatar1.png" alt=""/>
+                            <img src={`${item.image}`} alt=""/>
                             <span className="count-badge">1</span>
                         </div>
                         <div className="user-name">
                             <h5 className="small-title">
-                                Jane Cooper
+                                <Link to={`players/${item.slug}`}>
+                                    {item.name}
+                                </Link>
                             </h5>
                             <p className="user-position">Duelist</p>
                         </div>
                     </div>
                     <button className="btn btn-transparent">
-                        <BsPersonAdd/>
+                        <Icon path={mdiHandshakeOutline} size={1}/>
                     </button>
                 </div>
                 <div className="bottom-card">
@@ -65,19 +68,19 @@ export const PlayerCard = () => {
                         </h6>
                         <ul className="ratings">
                             <li>
-                                <CiStar/>
+                                <Icon path={mdiStar} size={1}/>
                             </li>
                             <li>
-                                <FaStar/>
+                                <Icon path={mdiStar} size={1}/>
                             </li>
                             <li>
-                                <FaStar/>
+                                <Icon path={mdiStar} size={1}/>
                             </li>
                             <li>
-                                <FaStar/>
+                                <Icon path={mdiStarHalfFull} size={1}/>
                             </li>
                             <li>
-                                <FaStar/>
+                                <Icon path={mdiStarOutline} size={1}/>
                             </li>
                         </ul>
                     </div>
@@ -85,8 +88,8 @@ export const PlayerCard = () => {
                         <h6 className="extra-small-title">
                             Rank
                         </h6>
-                        <span>
-                            <RiVipDiamondLine/>
+                        <span className={`flex`}>
+                            <Icon path={mdiDiamondOutline} size={0.8}/>
                             Diamond
                         </span>
                     </div>

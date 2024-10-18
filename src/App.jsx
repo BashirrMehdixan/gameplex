@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 // Layouts
 import RootLayout from "/src/layouts/RootLayout";
@@ -11,44 +11,47 @@ import Games from "/src/pages/games/Games";
 import GameDetail from "/src/pages/games/GameDetail";
 
 // Css
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import '/src/scss/App.css';
 
 function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <RootLayout />,
+            element: <RootLayout/>,
             children: [
                 {
                     index: true,
-                    element: <Home />
+                    element: <Home/>
                 },
                 {
                     path: "tournaments",
-                    element: <Tournaments />
+                    element: <Tournaments/>
                 },
                 {
                     path: "tournaments/:id",
-                    element: <TournamentDetail />
+                    element: <TournamentDetail/>
                 },
                 {
                     path: "games",
-                    element: <Games />
+                    element: <Games/>
                 },
                 {
                     path: "/games/:slug",
-                    element: <GameDetail />
-                }, 
+                    element: <GameDetail/>
+                },
                 {
                     path: "*",
-                    element: <Home />
+                    element: <Home/>
                 }
             ]
         }
     ])
     return (
         <>
-            <RouterProvider router={router} />
+            <RouterProvider router={router}/>
         </>
     )
 }

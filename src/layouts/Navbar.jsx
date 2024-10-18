@@ -1,7 +1,6 @@
 import {NavLink} from 'react-router-dom';
-import {CiWallet} from "react-icons/ci";
-import {IoIosNotifications} from "react-icons/io";
-import {MdOutlineKeyboardArrowDown} from "react-icons/md";
+import Icon from "@mdi/react";
+import {mdiBellOutline, mdiChevronDown, mdiWallet} from "@mdi/js";
 
 const Navbar = () => {
     return (
@@ -38,7 +37,7 @@ const Navbar = () => {
                                 <li>
                                     <button className="btn btn-orange btn-wallet">
                                         <span>
-                                            <CiWallet/>
+                                            <Icon path={mdiWallet} size={1} />
                                         </span>
                                         <span>
                                             Connect Wallet
@@ -47,7 +46,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <button className="btn btn-notification">
-                                        <IoIosNotifications/>
+                                        <Icon path={mdiBellOutline} size={1}/>
                                     </button>
                                 </li>
                                 {/*<li>*/}
@@ -67,7 +66,7 @@ const Navbar = () => {
                                             <img src="/images/users/81.jpg" alt=""/>
                                         </div>
                                         <div className="username">David Malan</div>
-                                        <MdOutlineKeyboardArrowDown/>
+                                        <Icon path={mdiChevronDown} size={1}/>
                                     </div>
                                 </li>
                             </ul>
